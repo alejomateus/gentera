@@ -43,7 +43,7 @@ export class ActiveSessionGuard implements CanActivate {
     ) {
       value = true;
     } else {
-      await this.router.navigate(["/home"]);
+      await this.router.navigate(["/dishes"]);
     }
     return Promise.resolve(value);
   }

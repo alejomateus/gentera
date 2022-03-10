@@ -47,7 +47,7 @@ export class CommonsService {
    * Redirect to principal dashboard administration
    */
   redirectToHome(): void {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/dishes']);
   }
 
   async verifyToken(): Promise<any> {
