@@ -1,0 +1,10 @@
+.show {
+  overflow: visible;
+  height: auto;
+}
+mdb-card-body {
+  max-height: 300px;
+  height: 300px;
+  overflow: scroll;
+  text-align: justify;
+}

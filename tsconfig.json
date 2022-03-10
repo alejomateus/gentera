@@ -2,7 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -19,12 +19,56 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app/*": [
+        "app/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
+      "@environment": [
+        "environments/environment.ts"
+      ],
+      "@login/*": [
+        "app/modules/login/*"
+      ],
+      "@store/*": [
+        "app/store/*"
+      ],
+      "@core/*": [
+        "app/modules/core/*"
+      ],
+      "@shared/*": [
+        "app/modules/shared/*"
+      ],
+      "@home/*": [
+        "app/modules/home/*"
+      ],
+      "@sign-up/*": [
+        "app/modules/sign-up/*"
+      ],
+      "@profile/*": [
+        "app/modules/profile/*"
+      ],
+      "@theme/*": [
+        "app/modules/theme/*"
+      ],
+      "@ingredients/*": [
+        "app/modules/ingredients/*"
+      ],
+      "@dishes/*": [
+        "app/modules/dishes/*"
+      ]
+    },
+    "strictPropertyInitialization": false
   },
+  "strictPropertyInitialization": false,
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
+    "strictTemplates": true,
+    "strictPropertyInitialization": false,
+  },
 }

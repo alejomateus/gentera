@@ -1,0 +1,66 @@
+<div class="content">
+  <div class="row">
+    <div class="col-12 col-sm-1 col-md-3 col-lg-4 col-xl-4 no-gutters"></div>
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-4 no-gutters p-4">
+      <form class="text-center border border-light p-5" [formGroup]="signUpForm">
+        <div class="text-center">
+          <img src="assets/images/logo.jpg" class="logo" alt="" srcset="">
+        </div>
+        <div #alert class="alert alert-danger text-center alert-dismissible fade show mt-4" role="alert"
+          *ngIf="errorSignup">
+          {{ 'errorSignUp' | translate }}
+        </div>
+        <p class="h4 mb-4"> {{ 'title' | translate }}
+        </p>
+        <div class="md-form">
+          <input type="text" formControlName="names" class="form-control mb-4"
+            placeholder="{{ 'placeholders.names' | translate}}">
+          <ng-container *ngFor="let validation of signUpValidationMessages.names">
+            <mdb-error
+              *ngIf="signUpForm.get('names')?.hasError(validation.type) && (signUpForm.get('names')?.dirty || signUpForm.get('names')?.touched)">
+              {{ validation.message | translate }}</mdb-error>
+          </ng-container>
+        </div>
+        <div class="md-form">
+          <input type="text" formControlName="last_names" class="form-control mb-4"
+            placeholder="{{ 'placeholders.last_names' | translate}}">
+          <ng-container *ngFor="let validation of signUpValidationMessages.last_names">
+            <mdb-error
+              *ngIf="signUpForm.get('last_names')?.hasError(validation.type) && (signUpForm.get('last_names')?.dirty || signUpForm.get('last_names')?.touched)">
+              {{ validation.message | translate }}</mdb-error>
+          </ng-container>
+        </div>
+        <div class="md-form">
+          <input type="email" formControlName="email" class="form-control mb-4"
+            placeholder="{{ 'placeholders.email' | translate}}">
+          <ng-container *ngFor="let validation of signUpValidationMessages.email">
+            <mdb-error
+              *ngIf="signUpForm.get('email')?.hasError(validation.type) && (signUpForm.get('email')?.dirty || signUpForm.get('email')?.touched)">
+              {{ validation.message | translate }}</mdb-error>
+          </ng-container>
+        </div>
+        <div class="md-form">
+          <input type="password" formControlName="password" class="form-control mb-4"
+            placeholder="{{ 'placeholders.password' | translate}}" >
+          <div *ngFor="let validation of signUpValidationMessages.password">
+            <mdb-error
+              *ngIf="signUpForm.get('password')?.hasError(validation.type) && (signUpForm.get('password')?.dirty || signUpForm.get('password')?.touched)">
+              {{ validation.message | translate }}
+            </mdb-error>
+          </div>
+        </div>
+
+        <button mdbBtn color="info" class="mb-4" [block]="true" type="button" mdbWavesEffect
+          [disabled]="signUpForm.invalid" (click)="signUp()">
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+          <span *ngIf="loading"> {{ 'loader_text' | translate}}</span>
+          <span *ngIf="!loading">{{ 'btn_continue' | translate}}</span>
+        </button>
+        <p>{{'signin_text' | translate}}
+          <a (click)="navigateTo('/login')" class="link">{{'signin_link' | translate}}</a>
+        </p>
+      </form>
+    </div>
+    <div class="col-12 col-sm-1 col-md-3 col-lg-4 col-xl-4 no-gutters"></div>
+  </div>
+</div>

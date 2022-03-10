@@ -1,0 +1,13 @@
+{
+  "btn_continue": "Verificar",
+  "form_errors": {
+    "email": {
+      "required": "Debe ingresar el email",
+      "pattern": "Debe ingresar un email valido"
+    },
+    "password": {
+      "required": "Debe ingresar la contraseña",
+      "pattern": "Debe ingresar una contraseña valido"
+    }
+  }
+}

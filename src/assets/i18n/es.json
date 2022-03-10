@@ -1,0 +1,19 @@
+{
+  "language": "español",
+  "options": {
+    "lateral": {
+      "labels": {
+        "my_account": "Mi cuenta",
+        "sign_out": "Cerrar sesión"
+      }
+    },
+    "principal": {
+      "labels": {
+        "ingredients": "Ingredientes",
+        "dishes": "Platillos",
+        "home": "Inicio"
+      }
+    }
+  },
+  "profile": "Mi perfil"
+}

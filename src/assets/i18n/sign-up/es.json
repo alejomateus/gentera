@@ -1,0 +1,31 @@
+{
+  "btn_continue": "Registrate",
+  "title": "Registrate ahora",
+  "placeholders": {
+    "email": "Correo electronico",
+    "names": "Nombres",
+    "last_names": "Apellidos",
+    "password": "Contraseña"
+  },
+  "placeholder": "Correo electronico",
+  "form_errors": {
+    "email": {
+      "required": "Debe ingresar el correo electronico",
+      "pattern": "Debe ingresar un correo electronico valido"
+    },
+    "password": {
+      "required": "Debe ingresar la contraseña",
+      "pattern": "Debe ingresar una contraseña valido"
+    },
+    "names": {
+      "required": "Debe ingresar los nombres"
+    },
+    "last_names": {
+      "required": "Debe ingresar los apellidos"
+    }
+  },
+  "errorSignUp": "Hubo un error al completar tu registro",
+  "loader_text": " Cargando...",
+  "signin_text": "Ya eres miembro?",
+  "signin_link": "Inicia sesión"
+}

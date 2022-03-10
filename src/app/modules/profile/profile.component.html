@@ -1,0 +1,32 @@
+<div class="content">
+  <div class="row">
+    <div class="col-12 col-sm-1 col-md-3 col-lg-4 col-xl-4 no-gutters"></div>
+    <div class="col-12 col-sm-10 col-md-6 col-lg-4 col-xl-4 no-gutters p-4">
+      <form class="text-center border border-light p-5"  [formGroup]="profileForm">
+        <div class="text-center">
+          <img src="assets/images/logo.jpg" class="logo" alt="" srcset="">
+        </div>
+
+        <p class="h4 mb-4"> {{ 'title' | translate }}
+        </p>
+        <div class="md-form">
+          <input type="text" formControlName="names" class="form-control mb-4"
+            placeholder="{{ 'placeholders.names' | translate}}">
+        </div>
+        <div class="md-form">
+          <input type="text" formControlName="last_names" class="form-control mb-4"
+            placeholder="{{ 'placeholders.last_names' | translate}}">
+        </div>
+        <div class="md-form">
+          <input type="email" formControlName="email" class="form-control mb-4"
+            placeholder="{{ 'placeholders.email' | translate}}">
+        </div>
+        <button mdbBtn color="info" class="mb-4" [block]="true" type="button" mdbWavesEffect
+          (click)="returntoHome()">
+          {{ 'btn_continue' | translate}}
+        </button>
+      </form>
+    </div>
+    <div class="col-12 col-sm-1 col-md-3 col-lg-4 col-xl-4 no-gutters"></div>
+  </div>
+</div>

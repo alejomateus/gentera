@@ -1,0 +1,9 @@
+{
+  "btn_continue": "Go to Home",
+  "title": "My account",
+  "placeholders": {
+    "email": "Email",
+    "names": "Names",
+    "last_names": "Lastnames"
+  }
+}

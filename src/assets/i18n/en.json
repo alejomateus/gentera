@@ -1,0 +1,19 @@
+{
+    "language": "english",
+    "options": {
+      "lateral": {
+        "labels": {
+          "my_account": "My account",
+          "sign_out": "Sign Out"
+        }
+      },
+      "principal": {
+        "labels": {
+          "ingredients": "Ingredients",
+          "dishes": "Dishes",
+          "home": "Home"
+        }
+      }
+    },
+    "profile": "Profile"
+}

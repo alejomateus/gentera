@@ -1,0 +1,20 @@
+{
+  "btn_continue": "Sign In",
+  "title": "Sign In",
+  "placeholder": "email",
+  "form_errors": {
+    "email": {
+      "required": "You must enter the email ",
+      "pattern": "You must enter a valid email "
+    },
+    "password": {
+      "required": "You must enter the password ",
+      "pattern": "You must enter a valid password "
+    }
+  },
+  "errorLogin": "Invalid user y/o password",
+  "loader_text": " Loading...",
+  "register_text": "Not a member?",
+  "register_link": "Register",
+  "remember_text": "Remember me"
+}

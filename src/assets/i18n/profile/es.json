@@ -1,0 +1,9 @@
+{
+  "btn_continue": "Volver",
+  "title": "Mi cuenta",
+  "placeholders": {
+    "email": "Correo electronico",
+    "names": "Nombres",
+    "last_names": "Apellidos"
+  }
+}

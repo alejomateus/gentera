@@ -1,0 +1,20 @@
+{
+  "btn_continue": "Iniciar sesión",
+  "title": "Iniciar sesión",
+  "placeholder": "Correo electronico",
+  "form_errors": {
+    "email": {
+      "required": "Debe ingresar el email",
+      "pattern": "Debe ingresar un email valido"
+    },
+    "password": {
+      "required": "Debe ingresar la contraseña",
+      "pattern": "Debe ingresar una contraseña valido"
+    }
+  },
+  "errorLogin": "Usuario y/o contraseña incorrectos",
+  "loader_text": " Cargando...",
+  "register_text": "No eres miembro?",
+  "register_link": "Registrate",
+  "remember_text": "Recuerdame"
+}

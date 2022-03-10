@@ -1,0 +1,13 @@
+{
+  "btn_continue": "Verify",
+  "form_errors": {
+    "email": {
+      "required": "You must enter the email ",
+      "pattern": "You must enter a valid email "
+    },
+    "password": {
+      "required": "You must enter the password ",
+      "pattern": "You must enter a valid password "
+    }
+  }
+}

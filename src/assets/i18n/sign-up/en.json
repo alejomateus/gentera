@@ -1,0 +1,30 @@
+{
+  "btn_continue": "Sign Up",
+  "title": "Sign Up",
+  "placeholders": {
+    "email": "Email",
+    "names": "Names",
+    "last_names": "Lastnames",
+    "password": "Password"
+  },
+  "form_errors": {
+    "email": {
+      "required": "You must enter the email ",
+      "pattern": "You must enter a valid email "
+    },
+    "password": {
+      "required": "You must enter the password ",
+      "pattern": "You must enter a valid password "
+    },
+    "names": {
+      "required": "You must enter the names "
+    },
+    "last_names": {
+      "required": "You must enter the lastnames "
+    }
+  },
+  "errorSignUp": "There was an error completing your registration",
+  "loader_text": " Loading...",
+  "signin_text": "Are you member?",
+  "signin_link": "Register"
+}

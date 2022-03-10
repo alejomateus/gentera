@@ -1,0 +1,35 @@
+<mdb-navbar SideClass="navbar navbar-expand-sm navbar-dark unique-color" [containerInside]="false">
+
+  <mdb-navbar-brand>
+    <a class="navbar-brand" href="#">Gentera
+    </a>
+  </mdb-navbar-brand>
+  <links>
+    <ul class="navbar-nav mr-auto" *ngIf="activeSession">
+      <!-- <li class="nav-item active">
+        <a class="nav-link waves-light" mdbWavesEffect>Home
+          <span class="sr-only">(current)</span></a>
+      </li> -->
+      <li class="nav-item" *ngFor="let option of principalOptions" (click)="navigate(option.redirect_url)">
+        <a class="nav-link waves-light" mdbWavesEffect> {{ option.label | translate}}</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto nav-flex-icons">
+      <select class="browser-default custom-select" [(ngModel)]="language" (change)="changeLanguage()">
+        <option [value]="item.value" *ngFor="let item of languages">
+          {{item.label}}
+        </option>
+      </select>
+      <li class="nav-item dropdown" dropdown *ngIf="activeSession">
+        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+          <mdb-icon fas icon="user"></mdb-icon> <span class="caret">{{ 'profile' | translate}}</span>
+        </a>
+        <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+
+          <a class="dropdown-item waves-light" mdbWavesEffect *ngFor="let option of options"
+            (click)="navigate(option.redirect_url)"> {{ option.label | translate}}</a>
+        </div>
+      </li>
+    </ul>
+  </links>
+</mdb-navbar>
