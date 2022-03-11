@@ -22,7 +22,7 @@ export class DishesComponent implements OnInit {
     private appFacade: AppFacade,
     private dishesFacade: DishesFacade,
     private route: ActivatedRoute,
-    private commonsService:CommonsService
+    private commonsService: CommonsService
   ) {
     this.selectLanguage$
       .pipe(takeUntil(this.destroy$))
@@ -34,9 +34,8 @@ export class DishesComponent implements OnInit {
   }
 
   async ngOnInit(): Promise<any> {
-    this.route.queryParams.subscribe(async (params) => {
+    this.route.queryParams.pipe(takeUntil(this.destroy$)).subscribe(async (params) => {
       if (params) {
-
       } else {
       }
       await this.getInitialState();
@@ -46,14 +45,14 @@ export class DishesComponent implements OnInit {
   async getInitialState(): Promise<any> {
     // const promiseDishes = await this.selectDishes$.pipe(take(1)).toPromise();
     // if (promiseDishes.data === null) {
-      this.dishesFacade.getDishes();
-      this.selectDishes2$
-        .pipe(takeUntil(this.destroy$))
-        .subscribe((action: IDishes) => {
-          if (action && action.data !== null) {
-            this.loadDishes(action);
-          }
-        });
+    this.dishesFacade.getDishes();
+    this.selectDishes2$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe((action: IDishes) => {
+        if (action && action.data !== null) {
+          this.loadDishes(action);
+        }
+      });
     // }
     // if (promiseDishes.data !== null) {
     //   this.loadDishes(promiseDishes);
@@ -63,7 +62,7 @@ export class DishesComponent implements OnInit {
     this.dishes = action.data;
   }
   async detailDish(id: string): Promise<any> {
-    await this.commonsService.navigateWithParams('/dish', { id });
+    await this.commonsService.navigateWithPathParams('/dish' , id);
   }
   get selectLanguage$(): Observable<Languages> {
     return this.appFacade.selectLanguage$;

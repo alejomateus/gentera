@@ -11,7 +11,8 @@ export const environment = {
     login: "login",
     signup: "sign-up",
     ingredients: "/list.php?i=list",
-    dishes: "/search.php?s="
+    dishes: "/search.php?s=",
+    dish: "/lookup.php?i="
   }
 };
 

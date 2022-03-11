@@ -7,7 +7,8 @@ import { ActiveSessionGuard } from './guards/active-session.guard';
 import { signupRootRoute } from '@sign-up/sign-up-routing.module';
 import { profileRootRoute } from '@profile/profile-routing.module';
 import { ingredientsRootRoute } from '@ingredients/ingredients-routing.module';
-import { dishesRootRoute } from './modules/dishes/dishes-routing.module';
+import { dishesRootRoute } from '@dishes/dishes-routing.module';
+import { dishRootRoute } from '@dish/dish-routing.module';
 
 const routes: Routes = [
   {
@@ -50,6 +51,12 @@ const routes: Routes = [
     path: dishesRootRoute,
     loadChildren: () =>
       import('@dishes/dishes.module').then((m) => m.DishesModule),
+    canActivate: [AuthGuard],
+  },
+  {
+    path: dishRootRoute,
+    loadChildren: () =>
+      import('@dish/dish.module').then((m) => m.DishModule),
     canActivate: [AuthGuard],
   },
 ];

@@ -4,7 +4,7 @@ import { Action } from '@ngrx/store';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, take } from 'rxjs/operators';
-import { DishesService } from '../../services/dishes.service';
+import { DishesService } from '../../../../services/dishes.service';
 import * as dishesListActions from '../actions/dishes-list.actions';
 /**
  * Injectable

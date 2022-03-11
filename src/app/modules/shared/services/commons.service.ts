@@ -39,8 +39,12 @@ export class CommonsService {
     await this.router.navigate([url]);
   }
 
-  async navigateWithParams(url: string, queryParams: object): Promise<any> {
+  async navigateWithParams(url: string, queryParams?: object): Promise<any> {
     await this.router.navigate([url], { queryParams });
+  }
+
+  async navigateWithPathParams(url: string, id: any): Promise<any> {
+    await this.router.navigate([url, id]);
   }
 
   /**

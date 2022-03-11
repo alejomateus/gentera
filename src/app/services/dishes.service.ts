@@ -12,9 +12,9 @@ export class DishesService {
    * Endpoint to get Dishes
    */
   getDishes(): Observable<any> {
-    return this.http.get(
-      environment.url + environment.endpoints.dishes,
-      {}
-    );
+    return this.http.get(environment.url + environment.endpoints.dishes);
+  }
+  getDishbyId(id: number): Observable<any> {
+    return this.http.get(environment.url + environment.endpoints.dish + id);
   }
 }

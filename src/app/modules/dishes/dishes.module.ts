@@ -13,7 +13,7 @@ import {
 import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { DishesListEffect } from './store/effects/dishes-list.effects';
 import { EffectsModule } from '@ngrx/effects';
-import { DishesService } from './services/dishes.service';
+import { DishesService } from '../../services/dishes.service';
 import { DishesFacade } from './store/facade/dishes.facade';
 import { DishesReducer } from './store/reducers/index.dishes.reducer';
 import { DishCardComponent } from './components/dish-card/dish-card.component';

@@ -59,6 +59,9 @@
       ],
       "@dishes/*": [
         "app/modules/dishes/*"
+      ],
+      "@dish/*": [
+        "app/modules/dish/*"
       ]
     },
     "strictPropertyInitialization": false

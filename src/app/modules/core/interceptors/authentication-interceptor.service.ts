@@ -33,7 +33,6 @@ export class AuthenticationInterceptorService implements HttpInterceptor {
       'Access-Control-Allow-Headers': 'Content-Type',
       'Access-Control-Allow-Methods': 'GET,POST,OPTIONS,DELETE,PUT',
     });
-    headers = headers.append('orderskey', environment.ordersKey);
     if (req.params instanceof CustomHttpParams && req.params.type) {
       const userData: any =
         await this.authenticationService.getCurrentAuthenticatedUser();
@@ -42,6 +41,8 @@ export class AuthenticationInterceptorService implements HttpInterceptor {
       }
       if (req.params.type === 'api-with-token') {
         headers = headers.append('Authorization', `Bearer ${this.token}`);
+      } else if (req.params.type === 'api-without-token') {
+        headers = headers.append('orderskey', environment.ordersKey);
       }
     }
     const authReq = req.clone({
