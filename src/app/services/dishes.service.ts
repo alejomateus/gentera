@@ -17,4 +17,7 @@ export class DishesService {
   getDishbyId(id: number): Observable<any> {
     return this.http.get(environment.url + environment.endpoints.dish + id);
   }
+  getRandomDish(): Observable<any> {
+    return this.http.get(environment.url + environment.endpoints.random);
+  }
 }

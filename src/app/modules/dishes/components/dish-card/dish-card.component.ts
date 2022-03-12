@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IDish } from '../../models/dishes';
+import { IDish, IDishSimple } from '../../models/dishes';
 
 @Component({
   selector: 'app-dish-card',
@@ -7,7 +7,7 @@ import { IDish } from '../../models/dishes';
   styleUrls: ['./dish-card.component.scss']
 })
 export class DishCardComponent implements OnInit {
-  @Input() dishInfo: IDish;
+  @Input() dishInfo: IDishSimple;
   constructor() { }
 
   ngOnInit(): void {

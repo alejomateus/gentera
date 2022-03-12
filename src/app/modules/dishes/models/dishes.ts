@@ -1,11 +1,11 @@
 export interface IDish {
   idMeal: string;
   strMeal: string;
+  strMealThumb: string;
   strDrinkAlternate: string | null;
   strCategory: string;
   strArea: string;
   strInstructions: string;
-  strMealThumb: string;
   strTags: string;
   strYoutube: string;
   strIngredient1: string;
@@ -52,6 +52,12 @@ export interface IDish {
   strImageSource: string | null;
   strCreativeCommonsConfirmed: string | null;
   dateModified: string | null;
+}
+
+export interface IDishSimple {
+  idMeal: string;
+  strMeal: string;
+  strMealThumb: string;
 }
 export type IKeysDish =   'idMeal' |
 'strMeal' |

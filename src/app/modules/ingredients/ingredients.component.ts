@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Languages } from '@app/store/actions/app.actions';
 import { AppFacade } from '@app/store/facades/app.facade';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,7 +13,7 @@ import { IngredientsFacade } from './store/facade/ingredients.facade';
   templateUrl: './ingredients.component.html',
   styleUrls: ['./ingredients.component.scss'],
 })
-export class IngredientsComponent implements OnInit {
+export class IngredientsComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   ingredients: IIngredient[] | null;
   constructor(
@@ -35,6 +35,10 @@ export class IngredientsComponent implements OnInit {
     await this.getInitialState();
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
+  }
   async getInitialState(): Promise<any> {
     const promiseIngredients = await this.selectIngredients$
       .pipe(take(1))

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Languages } from '@store/actions/app.actions';
 import { AppFacade } from '@store/facades/app.facade';
@@ -15,7 +15,7 @@ import { StorageService } from '@shared/services/storage.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit, OnDestroy {
   loginValidationMessages: LoginValidationMessages;
   loginForm: FormGroup;
   destroy$: Subject<boolean> = new Subject<boolean>();

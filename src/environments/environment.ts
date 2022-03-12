@@ -12,7 +12,9 @@ export const environment = {
     signup: "sign-up",
     ingredients: "/list.php?i=list",
     dishes: "/search.php?s=",
-    dish: "/lookup.php?i="
+    dish: "/lookup.php?i=",
+    random: "/random.php",
+    dishesByIngredient: "/filter.php?i=chicken_breast"
   }
 };
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Languages } from '@app/store/actions/app.actions';
 import { AppFacade } from '@app/store/facades/app.facade';
@@ -13,7 +13,7 @@ import { AuthenticationService } from '@shared/services/authentication.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   profileForm: FormGroup;
 

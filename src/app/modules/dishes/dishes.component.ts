@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Languages } from '@app/store/actions/app.actions';
 import { AppFacade } from '@app/store/facades/app.facade';
@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
 import { CommonsService } from '../shared/services/commons.service';
-import { IDish, IDishes } from './models/dishes';
+import { IDish, IDishes, IDishSimple } from './models/dishes';
 import { DishesFacade } from './store/facade/dishes.facade';
 
 @Component({
@@ -14,9 +14,9 @@ import { DishesFacade } from './store/facade/dishes.facade';
   templateUrl: './dishes.component.html',
   styleUrls: ['./dishes.component.scss'],
 })
-export class DishesComponent implements OnInit {
+export class DishesComponent implements OnInit, OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
-  dishes: IDish[] | null;
+  dishes: IDishSimple[] | null;
   constructor(
     public translate: TranslateService,
     private appFacade: AppFacade,
@@ -41,6 +41,12 @@ export class DishesComponent implements OnInit {
       await this.getInitialState();
     });
   }
+
+  ngOnDestroy(): void {
+    this.destroy$.next(true);
+    this.destroy$.unsubscribe();
+  }
+
 
   async getInitialState(): Promise<any> {
     // const promiseDishes = await this.selectDishes$.pipe(take(1)).toPromise();

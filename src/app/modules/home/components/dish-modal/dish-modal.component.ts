@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { IDish } from '@dishes/models/dishes';
 import { MDBModalRef } from 'angular-bootstrap-md';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-dish-modal',
@@ -8,12 +9,16 @@ import { MDBModalRef } from 'angular-bootstrap-md';
   styleUrls: ['./dish-modal.component.scss'],
 })
 export class DishModalComponent implements OnInit {
-  videoSource = 'https://www.youtube.com/embed/A3PDXmYoF5U';
+  dish: IDish;
+  action: Subject<any> = new Subject();
 
-  constructor(public modalRef: MDBModalRef, private sanitizer: DomSanitizer) {}
-  getEmbedUrl() {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.videoSource);
-  }
+  constructor(
+    public modalRef: MDBModalRef,
+  ) {}
 
   ngOnInit(): void {}
+  show(): void {
+    this.action.next('yes');
+    this.modalRef.hide();
+  }
 }

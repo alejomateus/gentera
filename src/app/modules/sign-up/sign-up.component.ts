@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Languages } from '@store/actions/app.actions';
 import { AppFacade } from '@store/facades/app.facade';
@@ -14,7 +14,7 @@ import { CommonsService } from '@shared/services/commons.service';
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
 })
-export class SignUpComponent implements OnInit {
+export class SignUpComponent implements OnInit, OnDestroy {
 
   signUpValidationMessages: SignUpValidationMessages;
   signUpForm: FormGroup;

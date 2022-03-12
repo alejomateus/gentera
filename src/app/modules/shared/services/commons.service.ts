@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AppFacade } from '@store/facades/app.facade';
 import { AuthenticationService } from './authentication.service';
@@ -14,7 +15,8 @@ export class CommonsService {
     private router: Router,
     private authenticationService: AuthenticationService,
     private storageService: StorageService,
-    private appFacade: AppFacade
+    private appFacade: AppFacade,
+    private sanitizer: DomSanitizer
   ) {}
 
   /**
@@ -70,5 +72,9 @@ export class CommonsService {
       value = true;
     }
     return Promise.resolve(value);
+  }
+
+  getEmbedUrl(url: string): SafeResourceUrl {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
